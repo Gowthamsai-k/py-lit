@@ -41,14 +41,14 @@ function NavigationBar() {
   };
 
   return (
-    <AppBar   position="fixed" sx = {{transform: "translateX(-70%)", borderRadius : "20px" , margin:"20px auto", backgroundColor : 'rgba(228, 228, 228, 1)', width:"40%",  
+    <AppBar   position="fixed" sx = {{transform: "translateX(-70%)", borderRadius : "20px" , margin:"20px auto", backgroundColor : 'rgba(29, 29, 29, 1)', width:"40%",  
       "&:hover": {
       boxShadow: "0 12px 30px rgba(193, 192, 192, 0.6)",
       transform: "translateX(-70%) translateY(-2px)",
     }}}>
       <Container maxWidth="s" >
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1, color : "black" }} />
+          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1, color : "white" }} />
           <Typography
             variant="h6"
             noWrap
@@ -62,7 +62,7 @@ function NavigationBar() {
               letterSpacing: '.3rem',
              
               textDecoration: 'none',
-              color : "black"
+              color : "white"
             
             }}
           >
@@ -76,7 +76,7 @@ function NavigationBar() {
               aria-controls="menu-appbar"
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
-              color="inherit"
+              color="white"
             >
               <MenuIcon />
             </IconButton>
@@ -94,7 +94,7 @@ function NavigationBar() {
               }}
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
-              sx={{ display: { xs: 'block', md: 'none' ,  color : "black" } }}
+              sx={{ display: { xs: 'block', md: 'none' ,  color : "white" } }}
             >
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
@@ -103,7 +103,7 @@ function NavigationBar() {
               ))}
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 ,  color : "black"}} />
+          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 ,  color : "white"}} />
           <Typography
             variant="h5"
             noWrap
@@ -131,7 +131,7 @@ function NavigationBar() {
               to={`/#${page.toLowerCase()}`}
               smooth
               onClick={handleCloseNavMenu}
-              sx={{ my: 2, color: "black", display: "block" }}
+              sx={{ my: 2, color: "white", display: "block" }}
             >
               {page}
             </Button>
