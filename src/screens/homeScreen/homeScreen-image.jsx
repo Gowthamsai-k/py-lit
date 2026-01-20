@@ -20,7 +20,7 @@ function ImageContainer() {
 
     {/* 2nd part  */}
 
-   <div style = {{background : "rgba(216, 214, 214, 1)" , margin : "20px" , borderRadius  : "40px"}}>
+   <div style = {{background : "rgb(214, 214, 216)" , margin : "20px" , borderRadius  : "40px"}}>
         <Box
           sx={{
             display: "flex",
@@ -33,7 +33,6 @@ function ImageContainer() {
           <Card
             id="home"
             sx={{
-              // margin : 5,
               justifyContent : "center" , 
               width: "30%",
               height : "200px",
@@ -48,8 +47,6 @@ function ImageContainer() {
             <CardContent>
               <Typography variant="body1" color="black">
                 PY-LIT helps teams define ML experiments using intent instead
-                <br />
-                of boilerplate code, enabling faster research iterations.
               </Typography>
             </CardContent>
           </Card>
