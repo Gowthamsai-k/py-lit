@@ -12,22 +12,19 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
-// import { useNavigate } from "react-router-dom";
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { HashLink } from 'react-router-hash-link'
+import { HashLink } from 'react-router-hash-link';
 
-
-const pages = ['home' , 'about'];
+const pages = ['home', 'about'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function NavigationBar() {
-  // const navigate = useNavigate()
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
+
   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget);
   };
@@ -41,29 +38,37 @@ function NavigationBar() {
   };
 
   return (
-    <AppBar   position="fixed" sx = {{transform: "translateX(-70%)", borderRadius : "20px" , margin:"20px auto", backgroundColor : 'rgba(29, 29, 29, 1)', width:"40%",  
-      "&:hover": {
-      boxShadow: "0 12px 30px rgba(193, 192, 192, 0.6)",
-      transform: "translateX(-70%) translateY(-2px)",
-    }}}>
-      <Container maxWidth="s" >
+    <AppBar
+      position="fixed"
+      sx={{
+        transform: 'translateX(-70%)',
+        borderRadius: '20px',
+        margin: '20px auto',
+        backgroundColor: 'rgba(29, 29, 29, 1)',
+        width: '40%',
+        '&:hover': {
+          boxShadow: '0 12px 30px rgba(193, 192, 192, 0.6)',
+          transform: 'translateX(-70%) translateY(-2px)',
+        },
+      }}
+    >
+      <Container maxWidth="sm">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1, color : "white" }} />
+
+          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1, color: 'white' }} />
+
           <Typography
             variant="h6"
             noWrap
             component="a"
-            href="#app-bar-with-responsive-menu"
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
               fontFamily: 'monospace',
               fontWeight: 700,
               letterSpacing: '.3rem',
-             
               textDecoration: 'none',
-              color : "white"
-            
+              color: 'white',
             }}
           >
             LOGO
@@ -72,29 +77,20 @@ function NavigationBar() {
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
               onClick={handleOpenNavMenu}
-              color="white"
+              sx={{ color: 'white' }}
             >
               <MenuIcon />
             </IconButton>
+
             <Menu
-              id="menu-appbar"
               anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'left',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'left',
-              }}
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
-              sx={{ display: { xs: 'block', md: 'none' ,  color : "white" } }}
+              sx={{
+                display: { xs: 'block', md: 'none' },
+                color: 'white',
+              }}
             >
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
@@ -103,12 +99,13 @@ function NavigationBar() {
               ))}
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 ,  color : "white"}} />
+
+          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1, color: 'white' }} />
+
           <Typography
             variant="h5"
             noWrap
             component="a"
-            href="#app-bar-with-responsive-menu"
             sx={{
               mr: 2,
               display: { xs: 'flex', md: 'none' },
@@ -116,51 +113,42 @@ function NavigationBar() {
               fontFamily: 'monospace',
               fontWeight: 700,
               letterSpacing: '.3rem',
-              // color: 'inherit',
               textDecoration: 'none',
+              color: 'white',
             }}
           >
-            
             LOGO
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' , } }}>
+
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
-             <Button
-              key={page}
-              component={HashLink}
-              to={`/#${page.toLowerCase()}`}
-              smooth
-              onClick={handleCloseNavMenu}
-              sx={{ my: 2, color: "white", display: "block" }}
-            >
-              {page}
-            </Button>
-         
-            )
-            )} 
-               
+              <Button
+                key={page}
+                component={HashLink}
+                to={`/#${page}`}
+                smooth
+                onClick={handleCloseNavMenu}
+                sx={{ my: 2, color: 'white', display: 'block' }}
+              >
+                {page}
+              </Button>
+            ))}
           </Box>
-          <Box sx={{ flexGrow: 0 ,   borderRadius : "20px"}}>
+
+          <Box sx={{ flexGrow: 0, borderRadius: '20px' }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
               </IconButton>
             </Tooltip>
+
             <Menu
               sx={{ mt: '45px' }}
-              id="menu-appbar"
               anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
+              anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+              transformOrigin={{ vertical: 'top', horizontal: 'right' }}
             >
               {settings.map((setting) => (
                 <MenuItem key={setting} onClick={handleCloseUserMenu}>
@@ -169,9 +157,11 @@ function NavigationBar() {
               ))}
             </Menu>
           </Box>
+
         </Toolbar>
       </Container>
     </AppBar>
   );
 }
+
 export default NavigationBar;

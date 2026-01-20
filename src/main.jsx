@@ -7,9 +7,8 @@ import NavigationBar from './navigationBar.jsx'
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
-    <NavigationBar  position="fixed"/>
-    <App />
-  </BrowserRouter>
- 
+      <NavigationBar position="fixed"/>
+      <App />
+    </BrowserRouter>
   </StrictMode>,
 )
