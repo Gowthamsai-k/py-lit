@@ -15,44 +15,38 @@ import AdbIcon from '@mui/icons-material/Adb';
 import { HashLink } from 'react-router-hash-link';
 
 const pages = ['home', 'about'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+
 
 function NavigationBar() {
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
+
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
 
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
-  };
-
+  
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
 
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
+
 
   return (
     <AppBar
       position="fixed"
       sx={{
-        transform: 'translateX(-70%)',
+        transform: 'translateX(-200%)',
         borderRadius: '20px',
         margin: '20px auto',
         backgroundColor: 'rgba(29, 29, 29, 1)',
-        width: '40%',
+        width: '20%',
         '&:hover': {
           boxShadow: '0 12px 30px rgba(193, 192, 192, 0.6)',
-          transform: 'translateX(-70%) translateY(-2px)',
+          transform: 'translateX(-200%) translateY(-2px)',
         },
       }}
     >
-      <Container maxWidth="sm">
+      <Container maxWidth="m" style = {{ display : "flex" }}>
         <Toolbar disableGutters>
 
           <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1, color: 'white' }} />
@@ -83,21 +77,7 @@ function NavigationBar() {
               <MenuIcon />
             </IconButton>
 
-            <Menu
-              anchorEl={anchorElNav}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{
-                display: { xs: 'block', md: 'none' },
-                color: 'white',
-              }}
-            >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography sx={{ textAlign: 'center' }}>{page}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
+            
           </Box>
 
           <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1, color: 'white' }} />
@@ -133,29 +113,6 @@ function NavigationBar() {
                 {page}
               </Button>
             ))}
-          </Box>
-
-          <Box sx={{ flexGrow: 0, borderRadius: '20px' }}>
-            <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-              </IconButton>
-            </Tooltip>
-
-            <Menu
-              sx={{ mt: '45px' }}
-              anchorEl={anchorElUser}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
-              anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
-              transformOrigin={{ vertical: 'top', horizontal: 'right' }}
-            >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography sx={{ textAlign: 'center' }}>{setting}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
           </Box>
 
         </Toolbar>
