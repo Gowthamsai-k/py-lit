@@ -12,13 +12,14 @@ function ImageContainer() {
     flexDirection: "row",
     justifyContent: "space-between",
     maxWidth: "1280px",
-    maxHeight : "1080px",
+    maxHeight:"200px",
+    // maxHeight : "1080px",
     alignItems: "center",
-    margin: "10px auto",
+    margin: "40px auto",
     padding : "10px",
-    border:"10px",
-    gap: 3,
     borderRadius :"40px",
+    
+    gap: 3,
     transition: "all 0.3s ease",
     "&:hover": {
       boxShadow: "0 12px 30px rgba(148, 147, 147, 0.6)",
@@ -43,26 +44,26 @@ function ImageContainer() {
     {/* 2nd part  */}
     <div style = {{justifyContent:"center", fontSize :"25px" , borderRadius : "40px" , margin: "20px" , background: "rgba(252, 252, 252, 1)", height :"200px" ,display:"flex" , alignItems:"center" }}>
 
-      <p>Easy way to work on your research , than spending time on writing boiler plate</p>
+      <p style ={{ fontSize:30}}>Stop writing training code. Start experimenting!!</p>
       <br />
     
      
     </div>
   
-    <Box style ={{display:"flex" , background:"rgb(255 , 255 , 255)" , borderRadius :"40px" , margin : "20px " , height : "200px"}}>
+    <Box style ={{display:"flex" , background:"rgb(255 , 255 , 255)" , borderRadius :"40px" , margin : "20px " , height : "400px"}}>
 
   <Card sx = {cards}>
     <CardContent>
-      <Typography sx={{ fontSize: 24 }}>Step 1</Typography>
-      <Typography variant="body2">
-        Pass the Hyper-parameters
+      <Typography sx={{ fontSize: 24 }}>Step 1 : Define Your Intent</Typography>
+      <Typography variant="body2" sx = {{fontSize : 14}}>
+     Describe model architecture and hyperparameters using structured inputs <br /> no training code required.
       </Typography>
     </CardContent>
   </Card>
-
+    
   <Card sx={cards}>
     <CardContent> 
-      <Typography sx={{ fontSize: 24 }}>Step 2</Typography>
+      <Typography sx={{ fontSize: 24 }}>Step 2  Compile & Validate Automatically</Typography>
       <Typography variant="body2">
         Does not need to write code, structure will automatically be generated
       </Typography>
@@ -71,7 +72,7 @@ function ImageContainer() {
 
   <Card sx={cards}>
     <CardContent>
-      <Typography sx={{ fontSize: 24 }}>Step 3</Typography>
+      <Typography sx={{ fontSize: 24 }}>Step 3 Train & Analyze Seamlessly</Typography>
       <Typography variant="body1">
         Review and train model efficiently without leaving this application
       </Typography>
