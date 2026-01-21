@@ -1,10 +1,32 @@
+import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
-import Box from "@mui/material/Box";
-import CardContent from "@mui/material/CardContent";
-import Typography from "@mui/material/Typography";
-
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
 
 function ImageContainer() {
+  const cards = {
+    background: "rgba(243, 242, 242, 1)",
+    minWidth: 275 , display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    maxWidth: "1280px",
+    maxHeight : "1080px",
+    alignItems: "center",
+    margin: "10px auto",
+    padding : "10px",
+    border:"10px",
+    gap: 3,
+    borderRadius :"40px",
+    transition: "all 0.3s ease",
+    "&:hover": {
+      boxShadow: "0 12px 30px rgba(148, 147, 147, 0.6)",
+      transform: "translateY(-2px)",
+    },
+
+  }
+
   return (
     <>
 
@@ -19,44 +41,43 @@ function ImageContainer() {
      <br />
 
     {/* 2nd part  */}
+    <div style = {{justifyContent:"center", fontSize :"25px" , borderRadius : "40px" , margin: "20px" , background: "rgba(252, 252, 252, 1)", height :"200px" ,display:"flex" , alignItems:"center" }}>
 
-   <div style = {{background : "rgb(214, 214, 216)" , margin : "20px" , borderRadius  : "40px"}}>
-        <Box
-          sx={{
-            display: "flex",
-            gap: 4,
-            margin : "20px",
-            flexWrap: "wrap",
-          }}
-        >
-          {/* Home Card */}
-          <Card
-            id="home"
-            sx={{
-              justifyContent : "center" , 
-              width: "30%",
-              height : "200px",
-              borderRadius: "40px",
-              transition: "0.3s",
-              "&:hover": {
-                boxShadow: "0 12px 30px rgba(0,0,0,0.3)",
-                transform: "translateY(-6px)",
-              },
-            }}
-          >
-            <CardContent>
-              <Typography variant="body1" color="black">
-                PY-LIT helps teams define ML experiments using intent instead
-              </Typography>
-            </CardContent>
-          </Card>
-
-         
-        </Box>
-        </div>
-
+      <p>Easy way to work on your research , than spending time on writing boiler plate</p>
+      <br />
     
+     
+    </div>
+  
+    <Box style ={{display:"flex" , background:"rgb(255 , 255 , 255)" , borderRadius :"40px" , margin : "20px " , height : "200px"}}>
 
+  <Card sx = {cards}>
+    <CardContent>
+      <Typography sx={{ fontSize: 24 }}>Step 1</Typography>
+      <Typography variant="body2">
+        Pass the Hyper-parameters
+      </Typography>
+    </CardContent>
+  </Card>
+
+  <Card sx={cards}>
+    <CardContent> 
+      <Typography sx={{ fontSize: 24 }}>Step 2</Typography>
+      <Typography variant="body2">
+        Does not need to write code, structure will automatically be generated
+      </Typography>
+    </CardContent>
+  </Card>
+
+  <Card sx={cards}>
+    <CardContent>
+      <Typography sx={{ fontSize: 24 }}>Step 3</Typography>
+      <Typography variant="body1">
+        Review and train model efficiently without leaving this application
+      </Typography>
+    </CardContent>
+  </Card>
+</Box>
      
   </>
   );
